@@ -7,10 +7,10 @@ public class Calc {
     private double tip;
     private double total;
 
-    public double calculateTip(double billAmount, double percent) {
+    public static double calculateTip(double billAmount, double percent) {
         return billAmount*percent;
     }
-    public double calculateTotal(double billAmount, double percent) {
+    public static double calculateTotal(double billAmount, double percent) {
         return billAmount*(1+percent);
     }
 
