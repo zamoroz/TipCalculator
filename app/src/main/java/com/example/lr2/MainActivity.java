@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     private double amount = 0.0; // Сумма счёта
@@ -18,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_percent; // Поле для значения процента
     private TextView tv_tip; // Поле для суммы чаевых
     private TextView tv_total; // Поле для итоговой суммы
+
+    // Форматировщики денежных сумм и процентов
+    private static final NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
+    private static final NumberFormat percentFormat = NumberFormat.getPercentInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
         et_amount.addTextChangedListener(amountTextWatcher);
         sb_percent.setOnSeekBarChangeListener(sbListener);
 
+        // Замените соответсвующие строки в методах onTextChanged и onProgressChanged:
+        tv_percent.setText(percentFormat.format(percent));
+        tv_tip.setText(currencyFormat.format(Calc.calculateTip(amount,percent)));
+        tv_total.setText(currencyFormat.format(Calc.calculateTotal(amount, percent)));
     }
 
     // Интерфейс слушателя изменений текста в EditText
