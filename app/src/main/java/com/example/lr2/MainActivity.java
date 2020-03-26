@@ -31,5 +31,8 @@ public class MainActivity extends AppCompatActivity {
         tv_tip.setText("0.0");
         tv_total.setText("0.0");
 
+        et_amount.addTextChangedListener(amountTextWatcher);
+        sb_percent.setOnSeekBarChangeListener(sbListener);
+
     }
 }
