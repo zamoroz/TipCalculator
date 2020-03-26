@@ -11,8 +11,8 @@
         android:id="@+id/et_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter amount"
-        android:hint="Input text"
+        android:text="@string/et_amount_text"
+        android:hint="@string/et_amount_hint"
         android:inputType="numberDecimal"
         android:selectAllOnFocus="true"
         android:textSize = "@dimen/text_size"/>
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tip"
+            android:text="@string/tv_tip"
             android:textSize = "@dimen/text_size"/>
 
         <TextView
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Total"
+            android:text="@string/tv_total"
             android:textSize = "@dimen/text_size"/>
 
         <TextView
