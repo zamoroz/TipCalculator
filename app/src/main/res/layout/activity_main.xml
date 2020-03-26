@@ -14,7 +14,8 @@
         android:text="Enter amount"
         android:hint="Input text"
         android:inputType="numberDecimal"
-        android:selectAllOnFocus="true"/>
+        android:selectAllOnFocus="true"
+        android:textSize = "@dimen/text_size"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +27,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="15%" />
+            android:text="15%"
+            android:textSize = "@dimen/text_size"/>
 
         <SeekBar
             android:id="@+id/sb_percent"
@@ -45,14 +47,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tip" />
+            android:text="Tip"
+            android:textSize = "@dimen/text_size"/>
 
         <TextView
             android:id="@+id/tv_tip"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textSize = "@dimen/text_size"/>
     </LinearLayout>
 
     <LinearLayout
@@ -65,13 +69,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Total" />
+            android:text="Total"
+            android:textSize = "@dimen/text_size"/>
 
         <TextView
             android:id="@+id/tv_total"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textSize = "@dimen/text_size"/>
     </LinearLayout>
 </LinearLayout>
