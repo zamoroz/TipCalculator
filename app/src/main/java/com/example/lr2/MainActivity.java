@@ -3,6 +3,8 @@ package com.example.lr2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -35,4 +37,21 @@ public class MainActivity extends AppCompatActivity {
         sb_percent.setOnSeekBarChangeListener(sbListener);
 
     }
+
+    // Интерфейс слушателя изменений текста в EditText
+    private final TextWatcher amountTextWatcher = new TextWatcher() {
+        // Вызывается при изменении пользователем величины счета
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            amount = Double.parseDouble(String.valueOf(s));
+            // Обновление полей с чаевыми и общей суммой
+            tv_tip.setText(Double.toString(Calc.calculateTip(amount,percent)));
+            tv_total.setText(Double.toString(Calc.calculateTotal(amount, percent)));
+        }
+        @Override
+        public void afterTextChanged(Editable s) { }
+        @Override
+        public void beforeTextChanged(
+                CharSequence s, int start, int count, int after) { }
+    };
 }
